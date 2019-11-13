@@ -1,0 +1,63 @@
+from random import randint
+
+
+obj = ["r", "p", "s"]
+
+computer = obj[randint(0,2)]
+
+count = 0
+
+win = 0
+lose = 0
+tie = 0
+
+continue_game = True
+
+while continue_game == True:
+
+    player = input("""Rock, Paper, Scissors?
+Enter [r] for Rock,
+Enter [p] for Paper
+Enter [s] for Scissor
+Enter[q] for Quit the game: \n""").lower()
+
+    if player == "q":
+        break
+    else:
+        count+=1
+        print("Round: ", count)
+
+        if player == computer:
+            tie+=1
+            print("Tie!\n")
+        elif player == "r":
+            if computer == "p":
+                lose+=1
+                print("You lose!", computer, "covers", player,"\n")
+            else:
+                win+=1
+                print("You win!", player, "smashes", computer , "\n")
+        elif player == "p":
+            if computer == "s":
+                lose+=1
+                print("You lose!", computer, "cut", player, "\n")
+            else:
+                win+=1
+                print("You win!", player, "covers", computer, "\n")
+        elif player == "s":
+            if computer == "r":
+                lose+=1
+                print("You lose...", computer, "smashes", player, "\n")
+            else:
+                win+=1
+                print("You win!", player, "cut", computer, "\n")
+        else:
+            print("That's not a valid play. Check your spelling!\n")
+
+    continue_game= True
+    computer = obj[randint(0,2)]
+
+print("\nYou played ", count,"times.")
+print("You won ",win,"times.")
+print("You lose ", lose, "times.")
+print("Game is tie for ",tie, "times.")
