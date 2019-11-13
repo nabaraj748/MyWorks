@@ -1,0 +1,38 @@
+# author -Nabaraj-
+class Quiz:
+    def __init__(self, question, answer):
+        self.question = question
+        self.answer = answer
+question_choices = [
+    "Who is the president of the United States? \n(a) Barack Obama  (b) Hilarry Clinton\n(c) George W. Bush (d) Donald Trump",
+    "\nWhat orange colored vegetable do rabbits like to eat? \n(a) Carrot  (b) Broccoli \n(c) Eggplant (d) Onion",
+    "\n What language do people speak in Germany? \n(a) German  (b) French\n(c) Chinese (d) Hindi",
+    "\n What color is Banana? \n(a) White  (b) Black\n(c) Yellow  (d) Purple",
+    "\n What animal has a really long neck? \n(a) Tiger   (b) Giraffe\n(c) Horse  (d) Elephant",
+    "\n What sea creature has 8 legs? \n(a) Dolphin   (b) Whale\n(c) Octopus  (d) Shark",
+    "\n What is the Capital city of the United States? \n(a) New York   (b) Dallas\n(c) Chicago  (d) Washington DC",
+    "\n How many states are in United States? \n(a) 49   (b) 55\n(c) 50   (d) 52",
+    "\n What is the name of the person, who discovered America? \n(a) John Adams   (b) James Monre\n(c) Christopher Columbus   (d) Andrew Jackson ",
+    "\n What is the capital of Japan? \n(a) London  (b) Tokyo\n(c) Beijing   (d) Bangkok "
+]
+question_ans = [
+    Quiz(question_choices[0], "d"),
+    Quiz(question_choices[1], "a"),
+    Quiz(question_choices[2], "a"),
+    Quiz(question_choices[3], "c"),
+    Quiz(question_choices[4], "b"),
+    Quiz(question_choices[5], "c"),
+    Quiz(question_choices[6], "d"),
+    Quiz(question_choices[7], "c"),
+    Quiz(question_choices[8], "c"),
+    Quiz(question_choices[9], "b"),
+]
+def run_quiz(question_answer):
+    score = 0
+    for question in question_answer:
+        answer = input(question.question)
+        if answer == question.answer:
+            score += 1
+    print("\nyou got", score, "out of", len(question_answer))
+
+run_quiz(question_ans)
