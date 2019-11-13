@@ -1,0 +1,36 @@
+import tkinter as tk
+
+win = tk.Tk()
+
+win.title('Hello')
+
+window = tk.Canvas(win, width=400, height=300, relief='raised', bg ='powder blue')
+window.pack()
+
+label1 = tk.Label(win, text='Welcome', bg ='purple', fg ='white')
+label1.config(font=('helvetica', 20))
+window.create_window(200, 25, window=label1)
+
+label2 = tk.Label(win, text='Type your Name:', bg ='green', fg ='white')
+label2.config(font=('helvetica', 14))
+window.create_window(200, 100, window=label2)
+
+entry1 = tk.Entry(win)
+window.create_window(200, 140, window=entry1)
+
+
+def getSquareRoot():
+    x1 = entry1.get()
+
+    label3 = tk.Label(win, text='Hello ! ' + x1 + ", You are welcome here.", font=('helvetica', 10), bg = 'red', fg = 'black')
+    window.create_window(200, 210, window=label3)
+
+    label4 = tk.Label(win, text=float(x1) ** 0.5, font=('helvetica', 10, 'bold'))
+    window.create_window(200, 230, window=label4)
+
+
+button1 = tk.Button(text='Click Me!', command=getSquareRoot, bg='blue', fg='white',
+                    font=('helvetica', 9, 'bold'))
+window.create_window(200, 180, window=button1)
+
+win.mainloop()
